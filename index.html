@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBasketball | รองเท้าบาสคุณภาพ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#home" class="logo">N<span>Basketball</span></a>
+
+        <div class="nav-menu">
+            <a href="#home">หน้าแรก</a>
+            <a href="#shop">สินค้า</a>
+            <a href="#about">เกี่ยวกับเรา</a>
+        </div>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 ตะกร้า
+            <b id="cartCount">0</b>
+        </button>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <p class="hero-small">NBAKKETBALL COLLECTION</p>
+
+        <h1>
+            NBasketball<br>
+            <span>For Your Style.</span>
+        </h1>
+
+        <p class="hero-description">
+            รองเท้าดีมีคุณภาพสำหรับนักบาสทุกคน
+            เลือกรองเท้าที่เข้ากับสไตล์การเล่นของคุณ
+        </p>
+
+        <a href="#shop" class="hero-button">
+            SHOP NOW →
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="produck/kai 1 white.jpg" alt="NBasketball Shoes">
+    </div>
+
+</section>
+
+<section class="shop" id="shop">
+
+    <div class="section-title">
+        <p>OUR COLLECTION</p>
+        <h2>สินค้าของเรา</h2>
+    </div>
+
+    <div class="tools">
+
+        <div class="search-box">
+            🔍
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="ค้นหากระเป๋า..."
+                oninput="displayProducts()"
+            >
+        </div>
+
+        <select id="categoryFilter" onchange="displayProducts()">
+            <option value="all">สินค้าทั้งหมด</option>
+            <option value="Kai 1">รองเท้าบาสไค 1</option>
+            <option value="Kai 2">รองเท้าบาสไค 2</option>
+            <option value="Kai 3">รองเท้าบาสไค 3</option>
+            <option value="Shock wave 7">รองเท้าบาสช็อคเวฟ 7</option>
+        </select>
+
+    </div>
+
+    <div class="product-grid" id="productList"></div>
+
+</section>
+
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img src="produck/kai2 poster.jpg" alt="About NBasketball">
+    </div>
+
+    <div class="about-content">
+        <p>ABOUT NBasketball</p>
+
+        <h2>
+            Simple.<br>
+            Elegant.<br>
+            Stylish.
+        </h2>
+
+        <div class="line"></div>
+
+        <p class="about-description">
+            NBasketball คือร้านรองเท้าบาสคุณภาพออนไลน์
+            ที่นำเสนอรองเท้าหลากหลายสไตล์
+            สำหรับนักบาสทุกคน ไม่ว่าคุณจะเป็นมือใหม่หรือมืออาชีพ 
+        </p>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <span>01</span>
+        <h3>Good Quality</h3>
+        <p>คุณภาพดี ทนทานต่อการใช้งาน</p>
+    </div>
+
+    <div class="feature">
+        <span>02</span>
+        <h3>Everyday Style</h3>
+        <p>เหมาะสำหรับการใช้เล่นในทุกวัน</p>
+    </div>
+
+    <div class="feature">
+        <span>03</span>
+        <h3>Easy Shopping</h3>
+        <p>เลือกซื้อสินค้าได้ง่ายผ่านเว็บไซต์</p>
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-logo">
+        N<span>Basketball</span>
+    </div>
+
+    <p>รองเท้าบาสคุณภาพสำหรับทุกสไตล์</p>
+
+    <div class="footer-menu">
+        <a href="#home">หน้าแรก</a>
+        <a href="#shop">สินค้า</a>
+        <a href="#about">เกี่ยวกับเรา</a>
+    </div>
+
+    <small>
+        © 2026 NBasketball. All Rights Reserved.
+    </small>
+
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+
+    <div class="cart-box" onclick="event.stopPropagation()">
+
+        <div class="cart-header">
+            <h2>ตะกร้าสินค้า</h2>
+            <button onclick="closeCart()">×</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>ยอดรวม</span>
+                <strong id="cartTotal">฿0</strong>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                ดำเนินการสั่งซื้อ
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
